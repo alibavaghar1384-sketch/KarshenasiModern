@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\3DModels\Audi.fbx" />
+    <None Remove="Assets\car-top-view.png" />
+    <None Remove="Assets\Carback.png" />
+    <None Remove="Assets\CarFront.png" />
+    <None Remove="Assets\CarLeft.png" />
+    <None Remove="Assets\CarRight.png" />
+    <None Remove="Assets\CarTop.png" />
+    <None Remove="Assets\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\3DModels\Audi.fbx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DirectShowLib" Version="1.0.0" />
+    <PackageReference Include="HelixToolkit.SharpDX.Assimp" Version="3.1.2" />
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.25.0" />
+    <PackageReference Include="HelixToolkit.Wpf.SharpDX" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="OpenCvSharp4" Version="4.13.0.20260602" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.13.0.20260602" />
+    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.13.0.20260602" />
+    <PackageReference Include="PdfSharp" Version="6.2.4" />
+    <PackageReference Include="QuestPDF" Version="2026.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\car-top-view.png" />
+    <Resource Include="Assets\Carback.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\CarFront.png" />
+    <Resource Include="Assets\CarLeft.png" />
+    <Resource Include="Assets\CarRight.png" />
+    <Resource Include="Assets\Logo.png" />
+  </ItemGroup>
+
+</Project>

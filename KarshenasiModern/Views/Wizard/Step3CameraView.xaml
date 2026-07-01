@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="KarshenasiModern.Views.Wizard.Step3CameraView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft"
+             Background="#F5F6FA">
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="تصویربرداری و مستندات"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Margin="0,0,0,25"
+                   Foreground="#1C61E7"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0"
+                    BorderBrush="#E0E0E0"
+                    BorderThickness="1"
+                    CornerRadius="12"
+                    Background="Black"
+                    Margin="0,0,20,0"
+                    ClipToBounds="True">
+
+                <Image x:Name="CameraImage"
+                       Stretch="Uniform"/>
+            </Border>
+
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="5,0,5,0">
+
+                    <TextBlock Text="انتخاب دوربین" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                    <ComboBox x:Name="CameraCombo"
+                              Height="45"
+                              VerticalContentAlignment="Center"
+                              Margin="0,0,0,15"/>
+
+                    <TextBlock Text="نوع عکس" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                    <ComboBox x:Name="CategoryCombo"
+                              Height="45"
+                              VerticalContentAlignment="Center"
+                              Margin="0,0,0,15"
+                              SelectedIndex="0">
+                        <ComboBoxItem Tag="Front" Content="جلو"/>
+                        <ComboBoxItem Tag="Rear" Content="عقب"/>
+                        <ComboBoxItem Tag="DriverSide" Content="سمت راننده"/>
+                        <ComboBoxItem Tag="PassengerSide" Content="سمت شاگرد"/>
+                        <ComboBoxItem Tag="Engine" Content="موتور"/>
+                        <ComboBoxItem Tag="Interior" Content="کابین"/>
+                    </ComboBox>
+
+                    <Button x:Name="CaptureButton"
+                            Content="ثبت عکس"
+                            Height="50"
+                            Background="#1C61E7"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontWeight="Bold"
+                            Margin="0,5,0,25"/>
+
+                    <TextBlock Text="لیست عکس‌های گرفته شده"
+                               Margin="0,10,0,10"
+                               FontWeight="Bold"
+                               FontSize="16"
+                               Foreground="#1C61E7"/>
+
+                    <ListBox x:Name="PhotosList"
+                             Height="250"
+                             Background="Transparent"
+                             BorderThickness="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,4"
+                                        Padding="12,8"
+                                        CornerRadius="8"
+                                        Background="White">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding CategoryPersian}" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding SequenceNumber, StringFormat={} (عکس شماره {0})}" Margin="10,0,0,0" Foreground="#888" VerticalAlignment="Center" FontSize="12"/>
+                                        </StackPanel>
+
+                                        <Button Grid.Column="1"
+                                                Content="حذف"
+                                                Click="DeletePhoto_Click"
+                                                Padding="15,5"
+                                                Background="#EF4444"
+                                                Foreground="White"
+                                                FontWeight="Bold"
+                                                FontSize="12">
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                                            CornerRadius="4"
+                                                            Padding="{TemplateBinding Padding}">
+                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                                          VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="0,25,0,0">
+
+            <Button x:Name="BackButton"
+                    Content="مرحله قبل"
+                    Width="180"
+                    Height="50"
+                    Margin="0,0,10,0"
+                    Background="#E0E0E0"
+                    BorderThickness="0"
+                    FontWeight="Bold"/>
+
+            <Button x:Name="NextButton"
+                    Content="بررسی بدنه"
+                    Width="180"
+                    Height="50"
+                    Background="#1C61E7"
+                    Foreground="White"
+                    BorderThickness="0"
+                    FontWeight="Bold"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

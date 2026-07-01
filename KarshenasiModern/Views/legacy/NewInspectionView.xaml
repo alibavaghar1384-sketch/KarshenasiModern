@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="KarshenasiModern.Views.NewInspectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:KarshenasiModern.Views"
+             FlowDirection="RightToLeft">
+    <!-- راست‌چین کردن کل صفحه برای زبان فارسی -->
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Background="#F8FAFC">
+
+            <Border Background="White"
+                    Margin="20"
+                    CornerRadius="12"
+                    Padding="25">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <!-- 0: عنوان -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 1: اطلاعات مشتری و خودرو -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 2: توضیحات کارشناس -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 3: کارشناسی بدنه -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 4: وضعیت شماره شاسی -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- 5: دکمه ها -->
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0: Title -->
+                    <TextBlock Grid.Row="0"
+                               Text="ثبت کارشناسی جدید"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               Margin="0,0,0,20"/>
+
+                    <!-- Row 1: Vehicle Information -->
+                    <UniformGrid Grid.Row="1"
+                                 Columns="2"
+                                 Margin="0,10">
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="نام مشتری" Margin="0,0,0,5"/>
+                            <TextBox x:Name="CustomerNameTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="شماره تماس" Margin="0,0,0,5"/>
+                            <TextBox x:Name="PhoneTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="شماره شاسی" Margin="0,0,0,5"/>
+                            <TextBox x:Name="ChassisTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="پلاک" Margin="0,0,0,5"/>
+                            <TextBox x:Name="PlateTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="برند خودرو" Margin="0,0,0,5"/>
+                            <TextBox x:Name="BrandTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="مدل خودرو" Margin="0,0,0,5"/>
+                            <TextBox x:Name="ModelTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="رنگ خودرو" Margin="0,0,0,5"/>
+                            <TextBox x:Name="ColorTextBox" Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="تاریخ ثبت" Margin="0,0,0,5"/>
+                            <DatePicker x:Name="InspectionDatePicker" Height="40"/>
+                        </StackPanel>
+
+                    </UniformGrid>
+
+                    <!-- Row 2: Expert Description -->
+                    <GroupBox Grid.Row="2"
+                              Header="توضیحات کارشناس"
+                              Margin="10">
+                        <TextBox x:Name="DescriptionTextBox"
+                                 Height="120"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"/>
+                    </GroupBox>
+
+                    <!-- Row 3: Body Inspection -->
+                    <GroupBox Grid.Row="3"
+                              Header="کارشناسی بدنه"
+                              Margin="10">
+                        <views:BodyInspectionView x:Name="BodyInspectionControl"/>
+                    </GroupBox>
+
+                    <!-- Row 4: Chassis Status -->
+                    <Border Grid.Row="4"
+                            Margin="10"
+                            Background="#F1F5F9"
+                            CornerRadius="10"
+                            Padding="15">
+                        <StackPanel>
+                            <TextBlock Text="وضعیت شماره شاسی"
+                                       FontWeight="Bold"
+                                       FontSize="14"/>
+                            <TextBlock x:Name="StatusText"
+                                       Margin="0,10,0,0"
+                                       FontSize="14"
+                                       Text="هنوز بررسی نشده"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Row 5: Buttons -->
+                    <StackPanel Grid.Row="5"
+                                Orientation="Horizontal"
+                                Margin="10,20,10,0">
+                        <Button x:Name="SaveButton"
+                                Content="ذخیره خودرو"
+                                Width="180"
+                                Height="45"
+                                Margin="0,0,12,0"/>
+                        <Button x:Name="NextStep"
+                                Content="مرحله بعد"
+                                Width="180"
+                                Height="45"/>
+                    </StackPanel>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="KarshenasiModern.Views.BodyInspectionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="15">
+
+        <DataGrid
+            x:Name="BodyGrid"
+            AutoGenerateColumns="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn
+                    Header="قطعه"
+                    Binding="{Binding PartName}"
+                    IsReadOnly="True"/>
+
+                <DataGridCheckBoxColumn
+                    Header="سالم"
+                    Binding="{Binding IsHealthy}"/>
+
+                <DataGridCheckBoxColumn
+                    Header="رنگ شدگی"
+                    Binding="{Binding HasPaint}"/>
+
+                <DataGridCheckBoxColumn
+                    Header="تعویض"
+                    Binding="{Binding IsReplaced}"/>
+
+                <DataGridCheckBoxColumn
+                    Header="ضربه"
+                    Binding="{Binding HasDamage}"/>
+
+                <DataGridCheckBoxColumn
+                    Header="صافکاری"
+                    Binding="{Binding HasRepair}"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

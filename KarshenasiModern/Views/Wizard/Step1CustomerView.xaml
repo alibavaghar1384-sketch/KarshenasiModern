@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="KarshenasiModern.Views.Wizard.Step1CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft"
+             Background="#F5F6FA">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Margin="30">
+
+            <StackPanel>
+
+                <TextBlock Text="اطلاعات مشتری و خودرو"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Margin="0,0,0,25"
+                           Foreground="#1C61E7"/>
+
+                <UniformGrid Columns="2">
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="نام و نام خانوادگی" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="CustomerNameTextBox"
+                                 Height="45"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="شماره موبایل" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="PhoneTextBox"
+                                 Height="45"
+                                 MaxLength="11" 
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="شماره شاسی" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="ChassisTextBox"
+                                 Height="45"
+                                 CharacterCasing="Upper" 
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="پلاک خودرو" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <Grid Height="45">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox x:Name="PlateCityTextBox" Grid.Column="0" MaxLength="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="5,0"/>
+
+                            <TextBlock Text="ایران" Grid.Column="1" VerticalAlignment="Center" Margin="6,0" FontWeight="Bold" FontSize="12" Foreground="#555"/>
+
+                            <TextBox x:Name="PlatePart2TextBox" Grid.Column="2" MaxLength="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="5,0"/>
+
+                            <ComboBox x:Name="PlateAlphaComboBox" Grid.Column="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectedIndex="1">
+                                <ComboBoxItem Content="الف"/>
+                                <ComboBoxItem Content="ب"/>
+                                <ComboBoxItem Content="ج"/>
+                                <ComboBoxItem Content="د"/>
+                                <ComboBoxItem Content="س"/>
+                                <ComboBoxItem Content="ص"/>
+                                <ComboBoxItem Content="ط"/>
+                                <ComboBoxItem Content="ع"/>
+                                <ComboBoxItem Content="ق"/>
+                                <ComboBoxItem Content="ل"/>
+                                <ComboBoxItem Content="م"/>
+                                <ComboBoxItem Content="ن"/>
+                                <ComboBoxItem Content="و"/>
+                                <ComboBoxItem Content="هـ"/>
+                                <ComboBoxItem Content="ی"/>
+                            </ComboBox>
+
+                            <TextBox x:Name="PlatePart1TextBox" Grid.Column="4" MaxLength="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="5,0"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="برند خودرو" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="BrandTextBox"
+                                 Height="45"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="مدل خودرو" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="ModelTextBox"
+                                 Height="45"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <TextBlock Text="رنگ خودرو" Margin="0,0,0,5" FontWeight="SemiBold"/>
+                        <TextBox x:Name="ColorTextBox"
+                                 Height="45"
+                                 VerticalContentAlignment="Center"
+                                 Padding="10,0"/>
+                    </StackPanel>
+
+                </UniformGrid>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="10,30,0,0">
+
+                    <Button x:Name="NextButton"
+                            Content="مرحله بعد"
+                            Width="180"
+                            Height="50"
+                            Background="#1C61E7"
+                            Foreground="White"
+                            BorderThickness="0"
+                            FontWeight="Bold"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>

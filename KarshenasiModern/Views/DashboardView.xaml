@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="KarshenasiModern.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft">
+    <Grid Background="#F8FAFC">
+
+        <WrapPanel Margin="30">
+
+            <Border Width="240"
+                    Height="120"
+                    CornerRadius="12"
+                    Margin="10"
+                    Background="#4F46E5">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="کارشناسی امروز"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock x:Name="TodayCountText" 
+                               Text="0"
+                               FontSize="36"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <Border Width="240"
+                    Height="120"
+                    CornerRadius="12"
+                    Margin="10"
+                    Background="#2563EB">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="کارشناسی این ماه"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock x:Name="MonthCountText" 
+                               Text="0"
+                               FontSize="36"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <Border Width="240"
+                    Height="120"
+                    CornerRadius="12"
+                    Margin="10"
+                    Background="#10B981">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="کل خودروها"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock x:Name="CarsCountText" 
+                               Text="0"
+                               FontSize="36"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <Border Width="240"
+                    Height="120"
+                    CornerRadius="12"
+                    Margin="10"
+                    Background="#D97706">
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="کل عکس‌ها"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock x:Name="PhotosCountText" 
+                               Text="0"
+                               FontSize="36"
+                               Foreground="White"
+                               HorizontalAlignment="Center"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </WrapPanel>
+
+    </Grid>
+</UserControl>

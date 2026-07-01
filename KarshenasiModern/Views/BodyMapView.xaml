@@ -1,0 +1,42 @@
+﻿<UserControl
+    x:Class="KarshenasiModern.Views.BodyMapView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid>
+
+        <Image
+            Source="/Assets/CarTop.png"
+            Stretch="Uniform"/>
+
+        <Canvas>
+
+            <Border
+                x:Name="HoodPart"
+                Width="70"
+                Height="50"
+                Background="Transparent"
+                Canvas.Left="215"
+                Canvas.Top="40"/>
+
+            <Border
+                x:Name="RoofPart"
+                Width="90"
+                Height="90"
+                Background="Transparent"
+                Canvas.Left="205"
+                Canvas.Top="110"/>
+
+            <Border
+                x:Name="TrunkPart"
+                Width="70"
+                Height="50"
+                Background="Transparent"
+                Canvas.Left="215"
+                Canvas.Top="245"/>
+
+        </Canvas>
+
+    </Grid>
+
+</UserControl>

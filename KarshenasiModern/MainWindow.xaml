@@ -1,0 +1,152 @@
+﻿<Window x:Class="KarshenasiModern.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="کارشناسی مدرن"
+        Width="1600"
+        Height="900"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft">
+
+    <Window.Resources>
+
+        <Style x:Key="MenuButtonStyle"
+               TargetType="Button">
+
+            <Setter Property="Height" Value="55"/>
+            <Setter Property="Margin" Value="15,8"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+
+                    <Setter Property="Background"
+                            Value="#14365F"/>
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#F3F5F9">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                Background="#0A2342">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+
+                    <TextBlock Text="کارشناسی مدرن"
+                               Foreground="White"
+                               FontSize="26"
+                               FontWeight="Bold"
+                               Margin="20,30,20,0"/>
+
+                    <TextBlock Text="نسخه حرفه‌ای"
+                               Foreground="#A8C3E8"
+                               Margin="20,5,20,0"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+
+                    <Button x:Name="DashboardButton"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Content="🏠 صفحه اصلی"/>
+
+                    <Button x:Name="NewInspectionButton"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Content="🚗 کارشناسی جدید"/>
+
+                    <Button x:Name="ArchiveButton"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Content="📂 آرشیو کارشناسی ها"/>
+
+                    <Button x:Name="SettingsButton"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Content="⚙ تنظیمات"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="White"
+                    Margin="15,15,15,0"
+                    CornerRadius="12">
+
+                <Grid Margin="25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+
+                        <TextBlock Text="سیستم کارشناسی خودرو"
+                                   FontSize="22"
+                                   FontWeight="Bold"/>
+
+                        <TextBlock Text="مدیریت کارشناسی و آرشیو"
+                                   Foreground="Gray"/>
+
+                    </StackPanel>
+
+                    <Border Grid.Column="1"
+                            Background="#EEF2FF"
+                            CornerRadius="8"
+                            Padding="12,6"
+                            VerticalAlignment="Center">
+
+                        <TextBlock Text="آماده به کار"
+                                   FontWeight="SemiBold"/>
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+            <Border Grid.Row="1"
+                    Background="White"
+                    Margin="15"
+                    CornerRadius="12">
+
+                <ContentControl x:Name="MainContent"/>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

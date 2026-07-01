@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="KarshenasiModern.Views.CameraView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <UniformGrid Columns="2">
+
+            <Border Margin="5"
+                    BorderBrush="#DDD"
+                    BorderThickness="1"
+                    CornerRadius="10">
+
+                <Grid>
+                    <Image x:Name="FrontImage"
+                           Stretch="Uniform"/>
+                    <TextBlock Text="نمای جلو"
+                               Background="#AA000000"
+                               Foreground="White"
+                               Padding="8"
+                               VerticalAlignment="Top"/>
+                </Grid>
+
+            </Border>
+
+            <Border Margin="5"
+                    BorderBrush="#DDD"
+                    BorderThickness="1"
+                    CornerRadius="10">
+
+                <Grid>
+                    <Image x:Name="RearImage"
+                           Stretch="Uniform"/>
+                    <TextBlock Text="نمای عقب"
+                               Background="#AA000000"
+                               Foreground="White"
+                               Padding="8"
+                               VerticalAlignment="Top"/>
+                </Grid>
+
+            </Border>
+
+            <Border Margin="5"
+                    BorderBrush="#DDD"
+                    BorderThickness="1"
+                    CornerRadius="10">
+
+                <Grid>
+                    <Image x:Name="LeftImage"
+                           Stretch="Uniform"/>
+                    <TextBlock Text="نمای چپ"
+                               Background="#AA000000"
+                               Foreground="White"
+                               Padding="8"
+                               VerticalAlignment="Top"/>
+                </Grid>
+
+            </Border>
+
+            <Border Margin="5"
+                    BorderBrush="#DDD"
+                    BorderThickness="1"
+                    CornerRadius="10">
+
+                <Grid>
+                    <Image x:Name="RightImage"
+                           Stretch="Uniform"/>
+                    <TextBlock Text="نمای راست"
+                               Background="#AA000000"
+                               Foreground="White"
+                               Padding="8"
+                               VerticalAlignment="Top"/>
+                </Grid>
+
+            </Border>
+
+        </UniformGrid>
+
+        <Button Grid.Row="1"
+                x:Name="CaptureButton"
+                Content="ثبت تصاویر خودرو"
+                Width="250"
+                Height="50"
+                HorizontalAlignment="Center"/>
+    </Grid>
+
+</UserControl>

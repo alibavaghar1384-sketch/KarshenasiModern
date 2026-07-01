@@ -1,0 +1,124 @@
+﻿<Window x:Class="KarshenasiModern.Views.InspectionReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="گزارش کارشناسی"
+        Width="1400"
+        Height="900"
+        WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Margin="20">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+
+                    <TextBlock
+                        Text="گزارش کارشناسی خودرو"
+                        FontSize="28"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+
+                    <TextBlock
+                        x:Name="DateText"
+                        Margin="0,10,0,0"/>
+                </StackPanel>
+
+                <Image
+                    Grid.Column="1"
+                    Source="/Assets/Logo.png"
+                    Height="120"/>
+            </Grid>
+
+            <!-- Vehicle Info -->
+
+            <Grid Grid.Row="1"
+                  Margin="0,20,0,20">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+
+                    <TextBlock x:Name="CustomerNameText"/>
+                    <TextBlock x:Name="CustomerPhoneText"/>
+                    <TextBlock x:Name="PlateText"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+
+                    <TextBlock x:Name="BrandText"/>
+                    <TextBlock x:Name="ModelText"/>
+                    <TextBlock x:Name="ChassisText"/>
+                </StackPanel>
+
+                <GroupBox Header="توضیحات کارشناس"
+          Margin="0,15,0,15">
+
+                    <TextBlock x:Name="DescriptionText"
+               TextWrapping="Wrap"
+               Margin="10"/>
+
+                </GroupBox>
+                
+            </Grid>
+
+            <!-- Photos -->
+
+            <UniformGrid Grid.Row="2"
+                         Columns="4">
+
+                <Image x:Name="FrontPhoto"/>
+                <Image x:Name="RearPhoto"/>
+                <Image x:Name="LeftPhoto"/>
+                <Image x:Name="RightPhoto"/>
+
+            </UniformGrid>
+
+            <!-- Body Maps -->
+
+            <Grid Grid.Row="3">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/Assets/CarLeft.png"/>
+                <Image Grid.Column="1"
+                       Source="/Assets/CarTop.png"/>
+                <Image Grid.Column="2"
+                       Source="/Assets/CarRight.png"/>
+
+            </Grid>
+
+            <!-- Inspection Table -->
+
+            <DataGrid Grid.Row="4"
+                      x:Name="BodyPartsGrid"
+                      AutoGenerateColumns="True"/>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</Window>
