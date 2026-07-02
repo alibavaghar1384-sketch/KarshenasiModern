@@ -21,7 +21,7 @@
 
             <Border x:Name="PrintableArea" 
                     Background="White" 
-                    Width="794" 
+                    Width="1080" 
                     BorderBrush="#DDDDDD" 
                     BorderThickness="1" 
                     Padding="15,10,15,10">
@@ -136,20 +136,20 @@
 
                     <Grid Margin="0,0,0,10">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1.4*"/>
+                            <ColumnDefinition Width="2.2*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" Margin="0,0,5,0">
                             <TextBlock Text="دیاگرام وضعیت بدنه" FontWeight="Bold" FontSize="14" Margin="0,0,0,5" Foreground="#333333"/>
-                            <Border BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="4" Padding="2" Background="#FAFAFA" Height="240">
-                                <controls:CarBodyDiagram x:Name="CarDiagram" Width="430" Height="230" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Border BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="4" Padding="10" Background="#FAFAFA" Height="420">
+                                <controls:CarBodyDiagram x:Name="CarDiagram" Width="840" Height="560" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Border>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="5,0,0,0">
                             <TextBlock Text="تصاویر ثبت شده" FontWeight="Bold" FontSize="14" Margin="0,0,0,5" Foreground="#333333"/>
-                            <Border BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="4" Padding="5" Background="#FFFFFF" Height="240">
+                            <Border BorderBrush="#EEEEEE" BorderThickness="1" CornerRadius="4" Padding="5" Background="#FFFFFF" Height="420">
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                                     <ItemsControl x:Name="DynamicPhotosControl">
                                         <ItemsControl.ItemsPanel>
